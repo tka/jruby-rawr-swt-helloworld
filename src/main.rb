@@ -1,26 +1,13 @@
-# for mac app bundle
-ruby_lib_path = File.join(File.dirname(File.dirname(File.dirname(__FILE__))), "Ruby").to_s()[5..-1]
-if File.exists?(ruby_lib_path )
-  Dir.foreach(ruby_lib_path) do | x |
-    next if x =~ /^\./
-    $LOAD_PATH.unshift "#{ruby_lib_path}/#{x}/lib"
-    puts "#{ruby_lib_path}/#{x}/lib"
-  end
+$LOAD_PATH << 'src'
 
-else
-  Dir.foreach('lib/ruby') do | x |
-    next if x =~ /^\./
-    $LOAD_PATH.unshift "lib/ruby/#{x}/lib"
-    puts "$LOAD_PATH.unshift 'lib/ruby/#{x}/lib'"
-  end
+ruby_lib_path = File.join(File.dirname(File.dirname(File.dirname(File.dirname(__FILE__)))), "ruby").to_s()[5..-1] 
+if File.exists?( ruby_lib_path ) 
+    LIB_PATH = File.join(File.dirname(File.dirname(File.dirname(File.dirname(__FILE__))))).to_s()[5..-1] 
+else 
+    LIB_PATH = 'lib' 
 end
 
-=begin
-CONFIG_DIR = File.join( java.lang.System.getProperty("user.home") , '.helloword' )
-Dir.mkdir( CONFIG_DIR ) unless File.exists?( CONFIG_DIR )
-=end
-
-require "swt_wrapper.rb"
+require "swt_wrapper"
 
 class App
   def initialize
