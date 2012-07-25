@@ -42,7 +42,7 @@ configuration do |c|
 	# A list of directories for rawr to include . All files in the given directories get bundled up.
 	# default value: ["lib/java"]
 	#
-	#c.java_lib_dirs = ["lib/java"]
+	c.java_lib_dirs = ["lib/java", "lib/swt"]
 
 	# Undocumented option 'files_to_copy'
 	# default value: []
@@ -74,7 +74,7 @@ configuration do |c|
 	# Undocumented option 'mac_do_not_generate_plist'
 	# default value: nil
 	#
-	#c.mac_do_not_generate_plist = nil
+	#c.mac_do_not_generate_plist = true
 
 	# Undocumented option 'mac_icon_path'
 	# default value: nil
