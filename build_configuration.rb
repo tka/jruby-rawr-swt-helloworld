@@ -42,7 +42,7 @@ configuration do |c|
 	# A list of directories for rawr to include . All files in the given directories get bundled up.
 	# default value: ["lib/java"]
 	#
-	c.java_lib_dirs = ["lib/java", "lib/swt"]
+	c.java_lib_dirs = ["lib/java"]
 
 	# Undocumented option 'files_to_copy'
 	# default value: []
